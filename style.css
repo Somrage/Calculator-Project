@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 1000px;
+    width: 500px;
+    align-content: flex-start;
+}
+
+.btn {
+    all: unset;
+    width: 100px;
+    height: 50px;
+    background-color: lightblue;
+    margin: 2px;
+    text-align: center;
+}
+
+.display {
+    flex: 2 1 auto;
+}
