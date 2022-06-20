@@ -1,21 +1,36 @@
 .main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 1000px;
-    width: 500px;
-    align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 1000px;
+  width: 500px;
+  align-content: flex-start;
+  margin: auto;
 }
 
 .btn {
-    all: unset;
-    width: 100px;
-    height: 50px;
-    background-color: lightblue;
-    margin: 2px;
-    text-align: center;
+  all: unset;
+  width: 96px;
+  height: 50px;
+  background-color: #78a1bb;
+  margin: 2px;
+  text-align: center;
+  transition: 0.2s;
+  font-size: 25px;
+  font-family: 'Roboto Slab', serif;
 }
 
-.display {
-    flex: 2 1 auto;
+#display {
+  flex: 1 1 100%;
+  background-color: #283044;
+  color: white;
+  text-align: right;
+  height: 65px;
+  font-size: 60px;
+  padding-right: 11px;
+  border: 6px double #78a1bb;
+}
+
+.btn:hover {
+  background-color: #EBF5EE;
 }
