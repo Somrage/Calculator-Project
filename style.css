@@ -3,12 +3,14 @@
   flex-wrap: wrap;
   justify-content: center;
   height: 1000px;
-  width: 500px;
+  width: 300px;
   align-content: flex-start;
   margin: auto;
 }
 
-.btn {
+.btn,
+.display,
+.clear {
   all: unset;
   width: 96px;
   height: 50px;
@@ -20,17 +22,27 @@
   font-family: 'Roboto Slab', serif;
 }
 
+.btn:hover {
+  background-color: hsl(205deg 29% 47%);
+}
+
+.btn:active {
+  background-color: white;
+}
+
+.clear {
+  flex: 0 0 297px;
+}
+
 #display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   flex: 1 1 100%;
   background-color: #283044;
   color: white;
-  text-align: right;
   height: 65px;
-  font-size: 60px;
+  font-size: 40px;
   padding-right: 11px;
   border: 6px double #78a1bb;
-}
-
-.btn:hover {
-  background-color: #EBF5EE;
 }
