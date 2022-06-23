@@ -5,7 +5,7 @@ const btnEquals = document.querySelector('.equals');
 const btnClear = document.querySelector('.clear');
 let a = 0;
 let b = 0;
-let operator;
+let operator = '';
 let result;
 
 function add(a, b) {
@@ -65,24 +65,37 @@ function calculator() {
 
   btnOperator.forEach(button => {
     button.addEventListener('click', () => {
-      a = Number(display.textContent);
-      operator = button.textContent;
-      display.textContent = '';
+      if (operator !== '') {
+        b = Number(display.textContent);
+        a = operate(operator, a, b);
+        operator = button.value;
+        display.textContent = ''
+      }
+      else {
+        a = Number(display.textContent);
+        operator = button.value;
+        display.textContent = '';
+      }
     })
   });
 
   btnEquals.addEventListener('click', () => {
-    b = Number(display.textContent);
-    result = operate(operator, a, b);
-
-    if (decimalCount(result) > 4) {
-      display.textContent = result.toFixed(4);
+    if (operator === '') {
+      display.textContent = display.textContent;
     }
     else {
-      display.textContent = result;
-    }
+      b = Number(display.textContent);
+      result = operate(operator, a, b);
 
-    a = Number(display.textContent);
+      if (decimalCount(result) > 4) {
+        display.textContent = result.toFixed(4);
+      }
+      else {
+        display.textContent = result;
+      }
+
+      a = Number(display.textContent);
+    }
   });
 
   btnClear.addEventListener('click', () => {
