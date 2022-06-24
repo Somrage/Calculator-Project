@@ -3,10 +3,12 @@ const btnDigits = document.querySelectorAll('.digit');
 const btnOperator = document.querySelectorAll('.operator');
 const btnEquals = document.querySelector('.equals');
 const btnClear = document.querySelector('.clear');
+const btnDecimal = document.querySelector('.decimal');
 let a = 0;
 let b = 0;
 let operator = '';
 let result;
+let decimalPoint = false;
 
 function add(a, b) {
     return a + b;
@@ -39,7 +41,7 @@ function operate(operator, a, b) {
     }
 }
 
-//to count numbers after decimal point and use toFixed
+//to count numbers after decimal point and use toFixed to prevent result overflow display
 function decimalCount(number) {
   let numStr = String(number);
   if (numStr.includes('.')) {
@@ -56,6 +58,9 @@ function calculator() {
       if (result !== '') {
         display.textContent = button.textContent;
         result = ''
+      }
+      else if (display.textContent === '0') {
+        display.textContent = button.textContent;
       }
       else {
         display.textContent += button.textContent;
@@ -95,6 +100,7 @@ function calculator() {
       }
 
       a = Number(display.textContent);
+      operator = '';
     }
   });
 
@@ -104,6 +110,15 @@ function calculator() {
     b = 0
     operator = ''
   });
+
+  btnDecimal.addEventListener('click', e => {
+    if (display.textContent.includes('.')) {
+      e.preventDefault();
+    }
+    else {
+      display.textContent += btnDecimal.textContent;
+    }
+  })
 }
 
 calculator();
