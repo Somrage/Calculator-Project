@@ -4,6 +4,7 @@ const btnOperator = document.querySelectorAll('.operator');
 const btnEquals = document.querySelector('.equals');
 const btnClear = document.querySelector('.clear');
 const btnDecimal = document.querySelector('.decimal');
+const btnBackspace = document.querySelector('.backspace');
 let a = 0;
 let b = 0;
 let operator = '';
@@ -118,6 +119,10 @@ function calculator() {
     else {
       display.textContent += btnDecimal.textContent;
     }
+  })
+
+  btnBackspace.addEventListener('click', () => {
+    display.textContent = display.textContent.slice(0, -1);
   })
 }
 
