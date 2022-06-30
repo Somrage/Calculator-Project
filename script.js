@@ -75,7 +75,7 @@ function calculator() {
         b = Number(display.textContent);
         a = operate(operator, a, b);
         operator = button.value;
-        display.textContent = ''
+        display.textContent = '';
       }
       else {
         a = Number(display.textContent);
