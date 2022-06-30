@@ -2,6 +2,11 @@ body {
   background-color: #283044;
 }
 
+.background {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .main {
   display: flex;
@@ -66,7 +71,7 @@ button.add-style {
   margin-bottom: 16px;
   overflow: hidden;
   width: 96px;
-  box-shadow: 5px 5px 8px 2px rgb(0 0 0 / 16%);
+  box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 16%);
   font-family: 'Roboto Slab', serif;
 }
 
@@ -106,6 +111,12 @@ h3 {
 .tip-five {
   left: 133px;
   bottom: 20px;
+}
+
+.tip-six {
+  margin: auto;
+  position: relative;
+  margin-top: 50px;
 }
 
 img {
